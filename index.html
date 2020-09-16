@@ -29,10 +29,27 @@
 
     <script type="text/babel">
       function App() {
-        return <div>Meu App</div>;
+        return <div>My Test</div>;
       }
 
-      ReactDOM.render(<App />, document.getElementById("app"));
+      const Buy = () => {
+        const [counter, setcounter] = React.useState(0);
+        console.log(counter);
+        function toBuy() {
+          setcounter(counter + 1);
+        }
+
+        return (
+          <div>
+            <button onClick={toBuy}>Add Item</button>
+            <p>Total: {counter}</p>
+            <p>Single Price: $ 22</p>
+            <p>Total Price: $ {counter * 22}</p>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<Buy />, document.getElementById("app"));
     </script>
   </body>
 </html>
